@@ -12,7 +12,7 @@
     <nav class="navbar">
 
        <a href="#home">Home</a>
-       <a href="#Skill">Skill</a>
+       <a href="#skill">Skill</a>
        <a href="#tentang">Tentang</a>
        <a href="#kontak">Kontak</a>
     </nav>
@@ -22,7 +22,7 @@
         <section id="home" class="card hero">
          <h1>Halo, ini website pertama saya</h1>
          <p>Saya sedang belajar web dari nol.</p>
-         <button class="btn">Hubungi saya</button>
+         <button class="btn" id="btnkontak">Hubungi saya</button>
         </section>
 
         <section id="tentang" class="card">
@@ -33,7 +33,7 @@
         </p>
         </section>
 
-        <section id="Skill" class="card">
+        <section id="skill" class="card">
             <h2>Skill</h2>
             <ul>
                 <li>html dasar</li>
@@ -44,13 +44,63 @@
 
 
          <section id="kontak" class="card">
-            <h2>Kontak</h2>
-            <p>Email: uhuyy@gmail.com</p>
-            <p>WhatsApp: 7111083930</p>
-        </section>
+            <h2>kontak</h2>
+
+            <form id="contactform">
+
+              <div>
+                <label>Nama</label><br>
+                <input type="text" id="nama" placeholder="JON">
+              </div><br>
+            
+              <div>
+                <label>Email</label><br>
+                <input type="email" id="email" placeholder="jon13@gmail.com">
+              </div><br>
+
+              <div>
+                <label>pesan</label><br>
+                <textarea id="pesan" placeholder="pesan sekarang"></textarea>
+              </div><br>
+
+              <button type="submit" class="btn">kirim</button>
+
+              <p id="formmessage"></p>
+
+              </form>
+            </section>
     
      </div>
-    
+    <script>
+  document.getElementById("btnkontak").addEventListener("click", function () {
+    document.getElementById("kontak").scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+</script>
+
+<script>
+    const form = document.getElementById("contactform");
+    const message = document.getElementById("formmessage")
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault() ;
+        
+        const nama = document.getElementById("nama").value.trim();
+        const email = document.getElementById("email").value.trim()
+        const pesan = document.getElementById("pesan").value.trim()
+
+        if (nama === "" || email === "" || pesan === "") {
+            message.textContent = "❌ semua field wajib diisi.";
+            message.style.color = "red" ;
+            return;
+        }
+
+            message.textContent = "✅ Pesan berhasil dikirim (simulasi).";
+            message.style.color = "green" ;
+
+            form.reset();
+    }
+</script>
 </body>
 </html>
-
