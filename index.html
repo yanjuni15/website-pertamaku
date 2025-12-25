@@ -78,15 +78,11 @@
     document.getElementById("kontak").scrollIntoView({
       behavior: "smooth"
     });
-    });
+  });  
+    document.getElementById("btnhalo").addEventListener("click", function (){
     document.getElementById("hasil").textContent = "halo, tombol sudah di klik";
-     document.getElementById("btnhalo").addEventListener("click", bilanghalo);
     });
-</script>
 
-<script>
-    const form = document.getElementById("contactform");
-    const message = document.getElementById("formmessage");
 
     form.addEventListener("submit", function (e) {
         e.preventDefault() ;
