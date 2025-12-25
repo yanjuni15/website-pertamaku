@@ -23,6 +23,7 @@
          <h1>Halo, ini website pertama saya</h1>
          <p>Saya sedang belajar web dari nol.</p>
          <button class="btn" id="btnkontak">Hubungi saya</button>
+         <p id="hasil">Belum klik</p>
         </section>
 
         <section id="tentang" class="card">
@@ -100,6 +101,12 @@
             message.style.color = "green" ;
 
             form.reset();
+      function bilang halo (){
+        document.getElementById("hasil").textContent = "halo, tombol sudah di klik";
+        document.getElementById("btnhalo").addEventListener("click", bilanghalo);
+        
+      }
+      }      
     });
 </script>
 </body>
