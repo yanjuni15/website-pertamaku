@@ -90,7 +90,7 @@
         const nama = document.getElementById("nama").value.trim();
         const email = document.getElementById("email").value.trim();
         const pesan = document.getElementById("pesan").value.trim();
-
+    }
         if (nama === "" || email === "" || pesan === "") {
             message.textContent = "❌ semua field wajib diisi.";
             message.style.color = "red" ;
@@ -106,7 +106,6 @@
         document.getElementById("hasil").textContent = "halo, tombol sudah di klik";
         document.getElementById("btnhalo").addEventListener("click", bilanghalo);
       }    
-      }  
     });
 </script>
 </body>
